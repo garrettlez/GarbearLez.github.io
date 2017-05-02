@@ -1,1 +1,1 @@
-# GarbearLez.github.io/home.html
+# GarbearLez.github.io/
