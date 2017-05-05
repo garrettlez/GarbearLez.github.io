@@ -15,7 +15,10 @@ canvas {
 function startGame() {
     myGameArea.start();
 }
-
+function startGame() {
+    myGamePiece = new component(30, 30, "kazumasprite.gif", 10, 120, "image");
+    myGameArea.start();
+}
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -25,9 +28,7 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     }
 }
-function startGame() {
-    myGamePiece = new component(30, 30, "kazumasprite.gif", 10, 120, "image");
-    myGameArea.start();
+
     function move(dir) {
     myGamePiece.image.src = "kazumasprite.gif";
     if (dir == "up") {myGamePiece.speedY = -1; }
