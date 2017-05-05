@@ -70,6 +70,11 @@ function updateGameArea() {
     myGamePiece.newPos();    
     myGamePiece.update();
 }
+    function clearmove() {
+    myGamePiece.image.src = "/character.gif";
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
 </script>
 </body>
 </html>
