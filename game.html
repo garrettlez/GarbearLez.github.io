@@ -25,6 +25,22 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     }
 }
+function startGame() {
+    myGamePiece = new component(30, 30, "kazumasprite.gif", 10, 120, "image");
+    myGameArea.start();
+    function move(dir) {
+    myGamePiece.image.src = "kazumasprite.gif";
+    if (dir == "up") {myGamePiece.speedY = -1; }
+    if (dir == "down") {myGamePiece.speedY = 1; }
+    if (dir == "left") {myGamePiece.speedX = -1; }
+    if (dir == "right") {myGamePiece.speedX = 1; }
+}
+
+function clearmove() {
+    myGamePiece.image.src = "kazumasprite.gif";
+    myGamePiece.speedX = 0; 
+    myGamePiece.speedY = 0; 
+}
 
 </script>
 </body>
