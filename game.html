@@ -16,7 +16,7 @@ var myGamePiece;
 var myBackground;
 
 function startGame() {
-    myGamePiece = new component(17, 54, "banditsprite.gif", 5, 715, "image");
+    myGamePiece = new component(17, 54, "banditsprite.gif", 5, 860, "image");
     myBackground = new component(1500, 727, "battlebackground.png", 0, 0, "image");
     myGameArea.start();
 }
@@ -25,7 +25,7 @@ var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 1500;
-        this.canvas.height = 727;
+        this.canvas.height = 860;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
