@@ -12,29 +12,29 @@ canvas {
 <script>
 
 var myGamePiece;
+var myBackground;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "kazumasprite.gif", 10, 120, "image");
+    myGamePiece = new component(30, 30, "smiley.gif", 10, 120, "image");
+    myBackground = new component(656, 270, "battlebackground.png", 0, 0, "image");
     myGameArea.start();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 1520;
-        this.canvas.height = 830;
+        this.canvas.width = 480;
+        this.canvas.height = 270;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', function (e) {
-            myGameArea.key = e.keyCode;
-        })
-        window.addEventListener('keyup', function (e) {
-            myGameArea.key = false;
-        })
-    }, 
-    clear : function(){
+        },
+    clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        clearInterval(this.interval);
     }
 }
 
@@ -65,28 +65,17 @@ function component(width, height, color, x, y, type) {
     this.newPos = function() {
         this.x += this.speedX;
         this.y += this.speedY;        
-    }
+    }    
 }
 
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.newPos();
+    myBackground.newPos();    
+    myBackground.update();
+    myGamePiece.newPos();    
     myGamePiece.update();
 }
 
-function move(dir) {
-    myGamePiece.image.src = "kazumasprite.gif";
-    if (dir == "up") {myGamePiece.speedY = -1; }
-    if (dir == "down") {myGamePiece.speedY = 1; }
-    if (dir == "left") {myGamePiece.speedX = -1; }
-    if (dir == "right") {myGamePiece.speedX = 1; }
-}
-
-function clearmove() {
-    myGamePiece.image.src = "kazumasprite.gif";
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
-}
 </script>
 </body>
 </html>    
