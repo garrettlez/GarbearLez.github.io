@@ -2,7 +2,7 @@ body {
  background-color: white;
  color: #FFFFFF}
 p {
- color: black;
+ color: black; text-align: center;
 }
 h1 {
  color: black; text-align: center;
