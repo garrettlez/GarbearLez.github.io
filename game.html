@@ -20,8 +20,7 @@ function startGame() {
     myBackground = new component(1500, 860, "battlebackground.png", 0, 0, "image");
     myGameArea.start();
 }
-var playermoving = new Image();
-playermoving.src = "banditmoving.png";
+    
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -79,5 +78,6 @@ function updateGameArea() {
 }
 
 </script>
+    <canvas id="playermovement"></canvas>
 </body>
 </html>    
