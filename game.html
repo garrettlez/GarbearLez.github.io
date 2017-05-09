@@ -2,6 +2,7 @@
 <head>
     <title>Garbear Lez - Game</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
 <style>
 canvas {
     border:1px solid #d3d3d3;
@@ -10,11 +11,17 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
+    <div>
+        <canvas id="canvas" width="1500" height="860" style="background:rgb(233,233,233)">
+If you see this text is because your browser do not support the canvas tag.
+        </canvas>
+    </div>
+    <script type="text/javascript" src="playermoving.js"></script>
 <script>
 
 var player;
 var myBackground;
-    <script src="charactermoving.js"></script>
+<
 
 function startGame() {
     player = new component(68, 216, "banditsprite.gif", 10, 550, "image");
