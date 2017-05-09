@@ -1,5 +1,5 @@
 var canvas; playermovement
-var ctx; 2D
+var ctx ("2D");
 var dx = 50;
 var x = 0;
 var y = 0;
