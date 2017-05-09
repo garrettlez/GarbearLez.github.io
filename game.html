@@ -12,15 +12,16 @@ canvas {
 <body onload="startGame()">
 <script>
 
-var myGamePiece;
+var player;
 var myBackground;
 
 function startGame() {
-    myGamePiece = new component(68, 216, "banditsprite.gif", 10, 550, "image");
+    player = new component(68, 216, "banditsprite.gif", 10, 550, "image");
     myBackground = new component(1500, 860, "battlebackground.png", 0, 0, "image");
     myGameArea.start();
 }
-
+var playermoving = new Image();
+playermoving.src = "banditmoving.png";
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -73,8 +74,8 @@ function updateGameArea() {
     myGameArea.clear();
     myBackground.newPos();    
     myBackground.update();
-    myGamePiece.newPos();    
-    myGamePiece.update();
+    player.newPos();    
+    player.update();
 }
 
 </script>
