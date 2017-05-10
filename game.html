@@ -11,17 +11,12 @@ canvas {
 </style>
 </head>
 <body onload="startGame()">
-    <div>
-        <canvas id="playermovement" width="1500" height="860" style="background:rgb(233,233,233)">
-If you see this text is because your browser do not support the canvas tag.
-        </canvas>
-    </div>
-    <script type="text/javascript" src="playermoving.js"></script>
 <script>
 
 var player;
 var myBackground;
-<
+var playermoving;
+    playermoving.src= "banditmoving.jpg";
 
 function startGame() {
     player = new component(68, 216, "banditsprite.gif", 10, 550, "image");
